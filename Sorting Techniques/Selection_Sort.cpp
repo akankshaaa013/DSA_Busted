@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+Best / Average / Worst Case complexity : O(n^2)
+*/
+
 void Selection_Sort(vector<int> &v, int n)
 {
     for (int i = 0; i < n - 1; i++)
