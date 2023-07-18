@@ -1,39 +1,47 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void sortZeroesAndOne(int input[], int size)
+void sortZeroesAndOne(vector<int> &arr, int size)
 {
-    int i=0;
-    int j =size-1;
+    int i = 0;
+    int j = size - 1;
 
-    while(i<j){
-        if(input[i]>input[j]){
-            swap(input[i++],input[j--]);
+    while (i < j)
+    {
+        if (arr[i] > arr[j])
+        {
+            swap(arr[i++], arr[j--]);
         }
-        else if(input[i]==0){
+        else if (arr[i] == 0)
+        {
             i++;
         }
-        else{
+        else
+        {
             j--;
         }
     }
 }
 
-int main(){
-    
-    int n;
-    cout<<"Enter the size of array : ";
-    cin>>n;
-    int arr[10000];
-    cout<<"Enter the array elements : ";
+int main()
+{
 
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    int n;
+    vector<int> arr;
+    cout << "Enter the size of the array : ";
+    cin >> n;
+    cout << "Enter the vector elements : ";
+    for (int i = 0; i < n; i++)
+    {
+        int a;
+        cin >> a;
+        arr.push_back(a);
     }
 
-    sortZeroesAndOne(arr,n);
+    sortZeroesAndOne(arr, n);
 
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<"  ";
-        }
+    for (auto it : arr)
+    {
+        cout << it << "   ";
+    }
 }
