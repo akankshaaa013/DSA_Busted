@@ -1,26 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//*2-POINTER APPROACH.
-
-void sortZeroesAndOne(vector<int> &arr, int size)
+void moveZeroesToEnd(vector<int> &arr, int n)
 {
-    int i = 0;
-    int j = size - 1;
 
-    while (i < j)
+    int i;
+    int j = 0;
+    while (arr[j] != 0)
     {
-        if (arr[i] > arr[j])
+        j++;
+    }
+
+    i = j + 1;
+
+    for (; i < n; i++)
+    {
+        if (arr[i] != 0)
         {
-            swap(arr[i++], arr[j--]);
-        }
-        else if (arr[i] == 0)
-        {
-            i++;
-        }
-        else
-        {
-            j--;
+            swap(arr[i], arr[j]);
+            j++;
         }
     }
 }
@@ -40,7 +38,7 @@ int main()
         arr.push_back(a);
     }
 
-    sortZeroesAndOne(arr, n);
+    moveZeroesToEnd(arr, n);
 
     for (auto it : arr)
     {
