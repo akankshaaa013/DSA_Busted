@@ -48,8 +48,6 @@ vector<vector<int>> generate(int n)
     vector<vector<int>> ans1;
     vector<int> temp;
 
-    int ans = 1;
-
     for (int i = 1; i <= n; i++)
     {
         ans1.push_back(print_nth_row(i));
