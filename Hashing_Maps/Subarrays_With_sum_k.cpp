@@ -20,10 +20,8 @@ int Subarray_with_sum_k(vector<int> nums, int k)
             cnt++;
         }
 
-        if (mpp.find(preSum - k) != mpp.end())
-        {
-            cnt += mpp[preSum - k];
-        }
+        //if (presum-k) exists in map then it's value will be added else 0 will be added.
+        cnt += mpp[preSum - k];
 
         mpp[preSum]++;
     }
@@ -48,7 +46,7 @@ int main()
     }
 
     int k;
-    cout << "Enter the targe sum : ";
+    cout << "Enter the target sum : ";
     cin >> k;
 
     int cnt = Subarray_with_sum_k(v, k);
