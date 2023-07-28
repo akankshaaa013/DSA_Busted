@@ -34,7 +34,7 @@ vector<vector<int>> triplet(int n, vector<int> &arr, int k)
 
 //* OPTIMIZED APPROACH
 //* TIME COMPLEXITY : O(nlogn) + O(n^2).
-//* SPACE COMPLEXITY : O(1).
+//* SPACE COMPLEXITY : O(1)
 vector<vector<int>> threeSum(vector<int> &nums, int target)
 {
     vector<vector<int>> ans;
