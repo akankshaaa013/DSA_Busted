@@ -28,8 +28,6 @@ int lowerBound(vector<int> arr, int n, int x)
     return ans;
 }
 
-
-
 // Binary Search Implemetation using Recursive method.
 int Binary_search(vector<int> &nums, int low, int high, int target)
 {
