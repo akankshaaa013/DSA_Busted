@@ -100,22 +100,84 @@ void print(Node *&head)
     cout << endl;
 }
 
+// To delete the element at the first position of the linked list.
+void delStart(Node *&head)
+{
+
+    if (head == NULL)
+    {
+        cout << "Underflow !!!";
+    }
+    else
+    {
+        Node *i = head;
+
+        head = head->next;
+        delete (i);
+    }
+}
+
+// To delete the element at the last position of the linked list.
+void delEnd(Node *&head)
+{
+
+    if (head == NULL)
+    {
+        cout << "Underflow !!!";
+    }
+    else
+    {
+        Node *i = head;
+        Node *j = NULL;
+
+        while (i->next != NULL)
+        {
+            j = i;
+            i = i->next;
+        }
+        j->next = NULL;
+        delete (i);
+    }
+}
+
+// To delete the element from the required position of the linked list.
+void del_from_pos(Node *&head, int pos)
+{
+    if (head == NULL)
+    {
+        cout << "Underflow !!!";
+    }
+    else
+    {
+        Node *i = head;
+        Node *j = NULL;
+
+        while (pos > 1)
+        {
+            j = i;
+            i = i->next;
+            pos--;
+        }
+
+        j->next = i->next;
+        delete (i);
+    }
+}
 
 int main()
 {
     Node *node1 = new Node(30);
     Node *head = node1;
 
-    insertAtHead(head,20);
-    insertAtHead(head,10);
+    insertAtHead(head, 20);
+    insertAtHead(head, 10);
 
-    insertAtTail(head,40);
-    insertAtTail(head,50);
+    insertAtTail(head, 40);
 
-    insertAtPos(head,25,2);
+    insertAtPos(head, 25, 2);
 
-    insertAtPos(head,45,5);
-    
     print(head);
-    
+
+    del_from_pos(head, 3);
+    print(head);
 }
