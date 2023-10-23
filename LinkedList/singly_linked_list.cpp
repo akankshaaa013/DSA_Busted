@@ -97,7 +97,8 @@ void print(Node *&head)
         cout << temp->data << "  ";
         temp = temp->next;
     }
-    cout << endl;
+    cout << endl
+         << endl;
 }
 
 // To delete the element at the first position of the linked list.
@@ -164,6 +165,32 @@ void del_from_pos(Node *&head, int pos)
     }
 }
 
+Node *reverse_linked_list(Node *&head)
+{
+
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+
+    Node *prev = NULL;
+    Node *curr = head;
+    Node *currNext = NULL;
+
+    while (curr != NULL)
+    {
+
+        currNext = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = currNext;
+    }
+
+    head = prev;
+
+    return head;
+}
+
 int main()
 {
     Node *node1 = new Node(30);
@@ -175,9 +202,12 @@ int main()
     insertAtTail(head, 40);
 
     insertAtPos(head, 25, 2);
+    insertAtPos(head, 55, 5);
+    insertAtPos(head, 60, 5);
 
     print(head);
 
-    del_from_pos(head, 3);
+    reverse_linked_list(head);
+
     print(head);
 }
