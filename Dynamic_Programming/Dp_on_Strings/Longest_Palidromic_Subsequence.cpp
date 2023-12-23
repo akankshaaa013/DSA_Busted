@@ -113,29 +113,19 @@ string printLCS(string &s1, string &s2)
             j--;
         }
     }
-
-        cout<<endl;
-    for(auto it : dp)
-    {
-        for(auto i : it)
-        {
-            cout<<i<<"  ";
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-
-
     return ans;
 }
 
 int main()
 {
-    string s1, s2;
+    string s1;
 
-    cout << "Enter the string s1 & s2 : ";
-    cin >> s1 >> s2;
+    cout << "Enter the string s1 : ";
+    cin >> s1;
+
+    string s2 = s1;
+    reverse(s2.begin(), s2.end());
 
     cout << endl
-         << "The Longest Common Subsequence is : " << printLCS(s1, s2) << endl;
+         << "The Longest Palindromic Subsequence is : " << printLCS(s1, s2) << endl;
 }
