@@ -115,10 +115,10 @@ int solveAlt(vector<int> &arr, int n)
 
     // cout << endl << max_idx << endl;
 
-    // for (auto it : hash)
-    //     cout << it << "  ";
+    for (auto it : dp)
+        cout << it << "  ";
 
-    // cout<<endl;
+    cout<<endl;
 
     // for (auto it : arr)
     //     cout << it << "  ";
