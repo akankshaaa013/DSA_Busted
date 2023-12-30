@@ -22,6 +22,17 @@ int lcs(string &str1, string &str2){
             else dp[i][j] = 0;
         }
     }
+
+    cout << endl;
+    for(auto it : dp)
+    {
+        for(auto i : it)
+        {
+            cout << i << "  ";
+        }
+        cout<<endl;
+    }
+
     return ans;
 }
 int lcsSO(string &str1, string &str2){
@@ -57,5 +68,5 @@ int main()
     cin >> s1 >> s2;
 
     cout << endl
-         << "The Longest Common Substring is : " << lcsSO(s1, s2) << endl;
+         << "The Longest Common Substring is : " << lcs(s1, s2) << endl;
 }
